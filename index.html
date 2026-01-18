@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daniel Ansari — Cybersecurity-Focused Developer</title>
+  <meta name="description" content="Cybersecurity-focused developer specializing in automation, AI-assisted security tooling, vulnerability assessments, and secure web applications." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1b33;
+      --panel2:#0c162b;
+      --text:#e8eefc;
+      --muted:rgba(232,238,252,.72);
+      --faint:rgba(232,238,252,.55);
+      --line:rgba(232,238,252,.12);
+      --accent:#5eead4; /* mint */
+      --accent2:#60a5fa; /* blue */
+      --shadow: 0 14px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(96,165,250,.22), transparent 70%),
+        radial-gradient(900px 500px at 85% 20%, rgba(94,234,212,.16), transparent 70%),
+        radial-gradient(900px 600px at 50% 95%, rgba(96,165,250,.10), transparent 70%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px 64px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:10px 0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(96,165,250,.12);
+    }
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      text-decoration:none;
+      color:var(--muted);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(94,234,212,.35);
+      color:var(--text);
+    }
+
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 220px at 25% 5%, rgba(94,234,212,.20), transparent 65%),
+        radial-gradient(520px 220px at 80% 15%, rgba(96,165,250,.20), transparent 65%);
+      pointer-events:none;
+      filter: blur(2px);
+      opacity:.8;
+    }
+    .hero > *{position:relative}
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:10px;
+    }
+    .badge{
+      border:1px solid rgba(94,234,212,.35);
+      background: rgba(94,234,212,.10);
+      color: rgba(232,238,252,.92);
+      padding:6px 10px;
+      border-radius: 999px;
+      font-weight:600;
+      letter-spacing:.1px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(32px, 4.4vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    .subtitle{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      max-width: 72ch;
+    }
+    .ctaRow{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 18px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid var(--line);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(94,234,212,.22), rgba(96,165,250,.18));
+      border-color: rgba(96,165,250,.35);
+    }
+    .btnPrimary:hover{transform: translateY(-1px); border-color: rgba(94,234,212,.55)}
+    .btnGhost{
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    .btnGhost:hover{transform: translateY(-1px); color: var(--text); border-color: rgba(94,234,212,.35)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.22);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .card p{margin:0; color:var(--muted)}
+    .section{
+      margin-top: 18px;
+    }
+    .sectionTitle{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      margin: 18px 0 10px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: rgba(232,238,252,.78);
+    }
+    .line{
+      height:1px; flex:1;
+      background: var(--line);
+      border-radius:999px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .cards{grid-template-columns:1fr}
+    }
+    .proj{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .proj:hover{
+      transform: translateY(-2px);
+      border-color: rgba(96,165,250,.28);
+    }
+    .proj h3{margin:0 0 8px; font-size:16px}
+    .proj p{margin:0 0 12px; color:var(--muted); font-size:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(232,238,252,.14);
+      color: rgba(232,238,252,.76);
+      background: rgba(255,255,255,.03);
+    }
+
+    .list{
+      margin:0; padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .li{
+      display:flex; gap:10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+    }
+    .bullet{
+      width:10px; height:10px; border-radius:999px;
+      margin-top: 6px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      flex: 0 0 auto;
+    }
+    .li strong{display:block; font-size:14px}
+    .li span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    .footer{
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .footer a{color: rgba(232,238,252,.82); text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Daniel Ansari</span>
+      </div>
+      <div class="nav">
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="kicker">
+        <span class="badge">Cybersecurity-Focused Developer</span>
+        <span>Automation • AI • Secure Web Applications</span>
+      </div>
+
+      <h1>Security-first systems that actually ship.</h1>
+      <p class="subtitle">
+        I combine cybersecurity expertise with Python automation and AI-assisted tooling —
+        helping teams build and improve web applications with risk reduction built in from day one.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="#contact">Contact</a>
+        <a class="btn btnGhost" href="#projects">View Projects</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>What I bring</h2>
+          <p>
+            Practical vulnerability assessment experience, structured reporting, and a strong understanding
+            of how web applications behave — from HTTP and sessions to authentication flows and APIs.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Credentials</h2>
+          <p>
+            • IT Security Engineer (Higher Vocational Education, Sweden)<br/>
+            • Google Cybersecurity Professional Certificate<br/>
+            • Internship: SpendNinja — 2x vulnerability assessments
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section" id="projects">
+      <div class="sectionTitle">
+        <h2>Selected Projects</h2><div class="line"></div>
+      </div>
+
+      <div class="cards">
+        <article class="proj">
+          <h3>Automated Vulnerability Analysis Tool</h3>
+          <p>
+            Python tool for passive security analysis of web applications. Collects signals safely and
+            generates structured reporting without impacting production systems.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">HTTP Analysis</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Reporting</span>
+          </div>
+          <!-- Optional: add links
+          <p style="margin-top:12px; color:rgba(232,238,252,.6); font-size:13px">
+            <span class="mono">GitHub:</span> <a href="https://github.com/yourusername/yourrepo">link</a>
+          </p>
+          -->
+        </article>
+
+        <article class="proj">
+          <h3>AI-Assisted Security Automation</h3>
+          <p>
+            Smaller projects exploring AI as decision support for security workflows — focusing on clarity,
+            explainability, and automation of repetitive tasks.
+          </p>
+          <div class="tags">
+            <span class="tag">Local LLMs</span>
+            <span class="tag">Python</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Security</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <h3>Web Application Security Practice</h3>
+          <p>
+            Hands-on work covering authentication, sessions, APIs, trust boundaries and OWASP Top 10 —
+            with emphasis on prevention and secure design patterns.
+          </p>
+          <div class="tags">
+            <span class="tag">OWASP</span>
+            <span class="tag">Auth/Sessions</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Architecture</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section" id="experience">
+      <div class="sectionTitle">
+        <h2>Experience</h2><div class="line"></div>
+      </div>
+
+      <ul class="list">
+        <li class="li">
+          <span class="bullet"></span>
+          <div>
+            <strong>SpendNinja — IT Security Intern (LIA)</strong>
+            <span>
+              Delivered two vulnerability assessments for two different customers. Worked with web app security
+              findings, risk prioritization, mitigation recommendations, and professional reporting.
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section" id="skills">
+      <div class="sectionTitle">
+        <h2>Skills</h2><div class="line"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Security</h2>
+          <p>
+            OWASP Top 10 • Vulnerability assessment • Risk reporting • Threat modeling mindset •
+            Web security fundamentals (auth, sessions, cookies, APIs)
+          </p>
+        </div>
+        <div class="card">
+          <h2>Development</h2>
+          <p>
+            Python • Automation scripting • AI-assisted tooling • Understanding of web app architecture and data flow
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="sectionTitle">
+        <h2>Contact</h2><div class="line"></div>
+      </div>
+
+      <div class="card">
+        <p style="margin:0 0 10px; color:rgba(232,238,252,.86); font-weight:700">
+          Let’s build something secure — and usable.
+        </p>
+        <p style="margin:0; color:rgba(232,238,252,.72)">
+          Email: <a href="mailto:your@email.com">your@email.com</a><br/>
+          GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a><br/>
+          LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span class="mono">Daniel Ansari</span> • Security-first portfolio</div>
+      <div><a href="#top">Back to top</a></div>
+    </div>
+
+  </div>
+</body>
+</html>
+
