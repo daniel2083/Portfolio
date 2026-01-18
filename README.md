@@ -23,7 +23,7 @@ I’m a cybersecurity-focused developer with hands-on experience in vulnerabilit
 
 ---
 
-## Experience SpendNinja
+## Experience
 During my internship at **SpendNinja**, I carried out **A number of real-world vulnerability assessments** for different customers.
 
 **Work included:**
