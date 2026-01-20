@@ -8,7 +8,7 @@ I’m a cybersecurity-focused developer with hands-on experience in vulnerabilit
 ## Highlights
 - **IT Security Engineer (Higher Vocational Education, 400 YH credits)** — Nackademin (Sweden)  
 - **Google Cybersecurity Professional Certificate** (Coursera / Google)
-- **Internship (LIA) at SpendNinja** — delivered **two vulnerability assessments** for two different customers
+- **Internship at SpendNinja** — delivered **vulnerability assessments** for different customers
 - Built multiple **Python projects** in automation and AI-assisted analysis
 - Strong understanding of **web application architecture** (HTTP/HTTPS, sessions, auth flows, APIs) from a security perspective
 
